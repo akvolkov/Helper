@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Helper</title>
+    <!--для запуска через сервер - src="helper/js/script.js"-->
+    <!--для запуска страницы из idea - src="js/script.js-->
+    <!--так же и для стилей css-->
+    <script src="helper/js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="helper/css/style.css"/>
+</head>
+<body>
+    <header>
+        <h1>Helper</h1>
+        <script>
+            hello();
+        </script>
+    </header>
+    <div>
+        <span class="tt" onclick="viewSpoiler('build'); return false">
+            <h3>Как делать сборки</h3>
+        </span>
+        <div id="build" style="display: none">
+            <label for="selectBuild">Выберите из списка:</label><br>
+            <select id="selectBuild">
+                <script>loadOption("selectBuild")</script>
+            </select>
+            <input type="submit" value="Показать" id="btnShowBuild" style="display: block"
+                   onclick="showTextArea('selectBuild')"/>
+            <input type="submit" value="Скрыть" id="btnHideBuild" style="display: none"
+                   onclick="hideTextArea('selectBuild')"/>
+            <label for="textAreaBuild"></label><textarea style="display: none" id="textAreaBuild" disabled></textarea>
+            <input type="submit" value="Добавить"/>
+        </div>
+
+        <span class="tt" onclick="viewSpoiler('bifit'); return false"><h3>Ссылки bifit</h3></span>
+        <div id="bifit" style="display: none">
+            <label for="selectBifit">Выберите из списка:</label><br>
+            <select id="selectBifit">
+                <script>loadOption("selectBifit")</script>
+            </select>
+            <input type="submit" value="Показать" id="btnShowBifit" style="display: block"
+                   onclick="showTextArea('selectBifit')"/>
+            <input type="submit" value="Скрыть" id="btnHideBifit" style="display: none"
+                   onclick="hideTextArea('selectBifit')"/>
+            <label for="textAreaBifit"></label><textarea style="display: none" id="textAreaBifit" disabled></textarea>
+            <input type="submit" value="Добавить"/>
+        </div>
+    </div>
+
+    <div>
+        <span class="tt" onclick="viewSpoiler('inet'); return false"><h3>Ссылки интернета</h3></span>
+        <div id="inet" style="display: none">
+            <label for="selectInet">Выберите из списка:</label><br>
+            <select id="selectInet">
+                <script>loadOption("selectInet")</script>
+            </select>
+            <input type="submit" value="Показать" id="btnShowInet" style="display: block" onclick="showTextArea('selectInet')"/>
+            <input type="submit" value="Скрыть" id="btnHideInet" style="display: none" onclick="hideTextArea('selectInet')"/>
+            <label for="textAreaInet"></label><textarea style="display: none" id="textAreaInet" disabled></textarea>
+            <input type="submit" value="Добавить"/>
+        </div>
+    </div>
+    <div >
+        <span class="tt" onclick="viewSpoiler('other'); return false"><h3>Прочее</h3></span>
+        <div id="other" style="display: none">
+            <label for="selectOther">Выберите из списка:</label><br>
+            <select id="selectOther" name="other">
+                <script>loadOption("selectOther")</script>
+            </select>
+            <input type="submit" value="Показать" id="btnShowOther" style="display: block" onclick="showTextArea('selectOther')"/>
+            <input type="submit" value="Скрыть" id="btnHideOther" style="display: none" onclick="hideTextArea('selectOther')"/>
+            <label for="textAreaOther"></label><textarea style="display: none" id="textAreaOther" disabled></textarea>
+            <input type="submit" value="Добавить"/>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2019. Aleksey_volkov88@mail.ru</p>
+    </footer>
+</body>
+</html>

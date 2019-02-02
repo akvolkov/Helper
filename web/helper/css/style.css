@@ -1,0 +1,18 @@
+body{
+    font-family: helvetica, arial;
+}
+.tt {
+    color: #361ad6;
+    cursor: pointer;
+
+}
+.tt:hover{
+    border-bottom:1px dashed green;
+    color:green;
+}
+.hideElement{
+    display: block;
+}
+.showElement{
+    display: none;
+}

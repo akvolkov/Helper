@@ -1,0 +1,6 @@
+{
+    "firmware": "текст firmware",
+    "facade": "текст facade",
+    "frontend": "текст frontend",
+    "admin" : "текст admin"
+}

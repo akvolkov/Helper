@@ -1,0 +1,5 @@
+{
+    "uric": "текст uric",
+    "cfc": "текст cfc",
+    "admin" : "текст admin"
+}
