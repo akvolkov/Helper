@@ -22,7 +22,7 @@
         </span>
         <div id="build" style="display: none">
             <label for="selectBuild">Выберите из списка:</label><br>
-            <select id="selectBuild">
+            <select id="selectBuild" onchange="refreshTextArea('selectBuild')">
                 <script>loadOption("selectBuild")</script>
             </select>
             <input type="submit" value="Показать" id="btnShowBuild" style="display: block"
@@ -33,10 +33,12 @@
             <input type="submit" value="Добавить"/>
         </div>
 
-        <span class="tt" onclick="viewSpoiler('bifit'); return false"><h3>Ссылки bifit</h3></span>
+        <span class="tt" onclick="viewSpoiler('bifit'); return false">
+            <h3>Ссылки bifit</h3>
+        </span>
         <div id="bifit" style="display: none">
             <label for="selectBifit">Выберите из списка:</label><br>
-            <select id="selectBifit">
+            <select id="selectBifit" onchange="refreshTextArea('selectBifit')">
                 <script>loadOption("selectBifit")</script>
             </select>
             <input type="submit" value="Показать" id="btnShowBifit" style="display: block"
@@ -49,10 +51,12 @@
     </div>
 
     <div>
-        <span class="tt" onclick="viewSpoiler('inet'); return false"><h3>Ссылки интернета</h3></span>
+        <span class="tt" onclick="viewSpoiler('inet'); return false">
+            <h3>Ссылки интернета</h3>
+        </span>
         <div id="inet" style="display: none">
             <label for="selectInet">Выберите из списка:</label><br>
-            <select id="selectInet">
+            <select id="selectInet" onchange="refreshTextArea('selectInet')">
                 <script>loadOption("selectInet")</script>
             </select>
             <input type="submit" value="Показать" id="btnShowInet" style="display: block" onclick="showTextArea('selectInet')"/>
@@ -62,10 +66,12 @@
         </div>
     </div>
     <div >
-        <span class="tt" onclick="viewSpoiler('other'); return false"><h3>Прочее</h3></span>
+        <span class="tt" onclick="viewSpoiler('other'); return false">
+            <h3>Прочее</h3>
+        </span>
         <div id="other" style="display: none">
             <label for="selectOther">Выберите из списка:</label><br>
-            <select id="selectOther" name="other">
+            <select id="selectOther" onchange="refreshTextArea('selectOther')">
                 <script>loadOption("selectOther")</script>
             </select>
             <input type="submit" value="Показать" id="btnShowOther" style="display: block" onclick="showTextArea('selectOther')"/>

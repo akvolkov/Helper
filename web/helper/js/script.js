@@ -61,30 +61,8 @@ function loadOption(id) {
  */
 function showTextArea(id) {
     const arr = CONDITIONS[id];
-    const request = new XMLHttpRequest();
-    request.open("GET", arr[0], false);
-    request.send();
-    const status = request.status;
-    if (status === 200) {
-        //получение значения атрубута value выделенного Options
-        let selectedIndex = document.getElementById(id).options.selectedIndex; // индекс выделенного Option
-        let selectOption = document.getElementById(id).options[selectedIndex]; // выделенный Options
-        let atrSelectOption = selectOption.innerHTML;
-        // получение JSON объекта
-        let text = request.responseText;
-        let json = JSON.parse(text);
-        console.log(json);
-        //проходимся циклом по json объекту и вытаскиваем value, чтобы TextArea.innetHTML присвоить значение value
-        for (key in json) {
-            if (key === atrSelectOption) {
-                document.getElementById(arr[1]).innerHTML = json[key];
-                changeDisplayElement(arr);
-            }
-        }
-    }
-    else {
-        alert("Пошло что то не так с загрузкой valueListBuild")
-    }
+    refreshTextArea(id);
+    changeDisplayElement(arr);
 }
 
 /**
@@ -111,6 +89,36 @@ function changeDisplayElement(arr)  {
     }
 }
 
-//Реализовать смену значения textArea при выборе options, сейчас меняется только при нажатии кнопки показать
+/**
+ * Метод загрузки данных из файла и отображения их в TextArea
+ * @param id - id тега <select>
+ */
+function refreshTextArea(id) {
+    const arr = CONDITIONS[id];
+    const request = new XMLHttpRequest();
+    request.open("GET", arr[0], false);
+    request.send();
+    const status = request.status;
+    if (status === 200) {
+        //получение значения атрубута value выделенного Options
+        let selectedIndex = document.getElementById(id).options.selectedIndex; // индекс выделенного Option
+        let selectOption = document.getElementById(id).options[selectedIndex]; // выделенный Options
+        let atrSelectOption = selectOption.innerHTML;
+        // получение JSON объекта
+        let text = request.responseText;
+        let json = JSON.parse(text);
+        console.log(json);
+        for (key in json) {
+            if (key === atrSelectOption) {
+                document.getElementById(arr[1]).innerHTML = json[key];
+            }
+        }
+    }
+    else {
+        alert("Пошло что то не так с загрузкой valueListBuild")
+    }
+}
+
 //Реализовать кнопку Добавить.
+//В ссылках Инете в поле TextArea сделать ссылки кликабельными.
 //Навесить стили.
