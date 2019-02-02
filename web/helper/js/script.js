@@ -16,22 +16,6 @@ function viewSpoiler(n) {
 }
 
 /**
- * метод показывающий textArea выбранного option
- * @param n - id select'а
- */
-function viewValue(n) {
-    const options = document.getElementById(n).getElementsByTagName("option");
-    let selectOption; //номер выделенного option
-    for (let i =0; i < options.length; i++) {
-        if (options[i].selected === true) {
-            selectOption = i;
-            break;
-        }
-    }
-    //сделать загрузку сохраненных данных из файла
-}
-
-/**
  * тестовый метод для проверки работы отправки запросов из javascript
  */
 function hello() {
@@ -90,15 +74,11 @@ function showTextArea(id) {
         let text = request.responseText;
         let json = JSON.parse(text);
         console.log(json);
-        //надо пройтись циклом по json объекту и вытащить value, соответствующий ключу atrSelectOption
-        // https://itchief.ru/lessons/javascript/javascript-json
+        //проходимся циклом по json объекту и вытаскиваем value, чтобы TextArea.innetHTML присвоить значение value
         for (key in json) {
             if (key === atrSelectOption) {
                 document.getElementById(arr[1]).innerHTML = json[key];
-                document.getElementById(arr[1]).style.display = "block";
-                document.getElementById(arr[2]).style.display = "block";
-                document.getElementById(arr[3]).style.display = "none";
-                // classList.add("hideElement");
+                changeDisplayElement(arr);
             }
         }
     }
@@ -113,14 +93,24 @@ function showTextArea(id) {
  */
 function hideTextArea(id) {
     const arr = CONDITIONS[id];
-    document.getElementById(arr[1]).style.display = "none";
-    document.getElementById(arr[2]).style.display = "none";
-    document.getElementById(arr[3]).style.display = "block";
+    changeDisplayElement(arr);
 }
 
-function getParams(name)  {
-
+/**
+ * смена атрибута style.display у элементов на противоположный
+ * @param arr - массив переданных эементов
+ */
+function changeDisplayElement(arr)  {
+    for (var i = 1; i < arr.length; i++) {
+        let elem = document.getElementById(arr[i]);
+        if (elem.style.display === "none"){
+            elem.style.display = "block";
+        } else if(elem.style.display === "block") {
+            elem.style.display = "none";
+        }
+    }
 }
 
 //Реализовать смену значения textArea при выборе options, сейчас меняется только при нажатии кнопки показать
 //Реализовать кнопку Добавить.
+//Навесить стили.
