@@ -16,68 +16,140 @@
             hello();
         </script>
     </header>
-    <div>
-        <span class="tt" onclick="viewSpoiler('build'); return false">
-            <h3>Как делать сборки</h3>
-        </span>
-        <div id="build" style="display: none">
-            <label for="selectBuild">Выберите из списка:</label><br>
-            <select id="selectBuild" onchange="refreshTextArea('selectBuild')">
-                <script>loadOption("selectBuild")</script>
-            </select>
-            <input type="submit" value="Показать" id="btnShowBuild" style="display: block"
-                   onclick="showTextArea('selectBuild')"/>
-            <input type="submit" value="Скрыть" id="btnHideBuild" style="display: none"
-                   onclick="hideTextArea('selectBuild')"/>
-            <label for="textAreaBuild"></label><textarea style="display: none" id="textAreaBuild" disabled></textarea>
-            <input type="submit" value="Добавить"/>
+    <div id="body">
+        <div id="mainBuild">
+            <span class="tt" onclick="viewSpoiler('build'); return false">
+                <h3>Как делать сборки</h3>
+            </span>
+            <div id="build" style="display: none">
+                <div id="divSelectBuild">
+                    <label for="selectBuild">Выберите из списка:</label><br>
+                    <select id="selectBuild" onchange="refreshTextArea('selectBuild')">
+                        <script>loadOption("selectBuild")</script>
+                    </select>
+                    <input type="submit" value="Показать" id="btnShowBuild" style="display: block" onclick="showTextArea('selectBuild')"/>
+                    <input type="submit" value="Скрыть" id="btnHideBuild" style="display: none" onclick="hideTextArea('selectBuild')"/>
+                    <label for="textAreaBuild"></label>
+                    <textarea style="display: none" id="textAreaBuild" disabled></textarea>
+                    <input type="submit" value="Добавить" id="btnAddBuild" style="display: block"
+                            onclick="changeDisplayElement(['','divAddBuild', 'btnAddBuild'])"/>
+                </div>
+                <div id="divAddBuild" style="display: none">
+                    <div>
+                        <h4>Добавление записки!</h4>
+                    </div>
+                    <form method="get" >
+                        <label>Введите заголовок записки:
+                            <input id="inputAddNameBuild" type="text" name="name"><br />
+                        </label>
+                        <label>Введите текст записки:</label><br />
+                        <textarea id="taAddValueBuild"></textarea><br />
+                        <input type="submit" value="Отправить"/>
+                    </form>
+                    <input type="submit" value="Отмена" onclick="changeDisplayElement(['','divAddBuild', 'btnAddBuild'])"/>
+                </div>
+            </div>
         </div>
 
-        <span class="tt" onclick="viewSpoiler('bifit'); return false">
-            <h3>Ссылки bifit</h3>
-        </span>
-        <div id="bifit" style="display: none">
-            <label for="selectBifit">Выберите из списка:</label><br>
-            <select id="selectBifit" onchange="refreshTextArea('selectBifit')">
-                <script>loadOption("selectBifit")</script>
-            </select>
-            <input type="submit" value="Показать" id="btnShowBifit" style="display: block"
-                   onclick="showTextArea('selectBifit')"/>
-            <input type="submit" value="Скрыть" id="btnHideBifit" style="display: none"
-                   onclick="hideTextArea('selectBifit')"/>
-            <label for="textAreaBifit"></label><textarea style="display: none" id="textAreaBifit" disabled></textarea>
-            <input type="submit" value="Добавить"/>
+        <div id="mainBifit">
+            <span class="tt" onclick="viewSpoiler('bifit'); return false">
+                <h3>Ссылки bifit</h3>
+            </span>
+            <div id="bifit" style="display: none">
+                <div id="divSelectBifit">
+                    <label for="selectBifit">Выберите из списка:</label><br>
+                    <select id="selectBifit" onchange="refreshTextArea('selectBifit')">
+                        <script>loadOption("selectBifit")</script>
+                    </select>
+                    <input type="submit" value="Показать" id="btnShowBifit" style="display: block" onclick="showTextArea('selectBifit')"/>
+                    <input type="submit" value="Скрыть" id="btnHideBifit" style="display: none" onclick="hideTextArea('selectBifit')"/>
+                    <label for="textAreaBifit"></label>
+                    <textarea style="display: none" id="textAreaBifit" disabled></textarea>
+                    <input type="submit" value="Добавить" id="btnAddBifit" style="display: block"
+                           onclick="changeDisplayElement(['','divAddBifit', 'btnAddBifit'])"/>
+                </div>
+                <div id="divAddBifit" style="display: none">
+                    <div>
+                        <h4>Добавление записки!</h4>
+                    </div>
+                    <form method="get" >
+                        <label>Введите заголовок записки:
+                            <input id="inputAddNameBifit" type="text" name="name"><br />
+                        </label>
+                        <label>Введите текст записки:</label><br />
+                        <textarea id="taAddValueBifit"></textarea><br />
+                        <input type="submit" value="Отправить"/>
+                    </form>
+                    <input type="submit" value="Отмена" onclick="changeDisplayElement(['','divAddBifit', 'btnAddBifit'])"/>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div>
-        <span class="tt" onclick="viewSpoiler('inet'); return false">
-            <h3>Ссылки интернета</h3>
-        </span>
-        <div id="inet" style="display: none">
-            <label for="selectInet">Выберите из списка:</label><br>
-            <select id="selectInet" onchange="refreshTextArea('selectInet')">
-                <script>loadOption("selectInet")</script>
-            </select>
-            <input type="submit" value="Показать" id="btnShowInet" style="display: block" onclick="showTextArea('selectInet')"/>
-            <input type="submit" value="Скрыть" id="btnHideInet" style="display: none" onclick="hideTextArea('selectInet')"/>
-            <label for="textAreaInet"></label><textarea style="display: none" id="textAreaInet" disabled></textarea>
-            <input type="submit" value="Добавить"/>
+        <div id="mainInet">
+            <span class="tt" onclick="viewSpoiler('inet'); return false">
+                <h3>Ссылки интернета</h3>
+            </span>
+            <div id="inet" style="display: none">
+                <div id="divSelectInet">
+                    <label for="selectInet">Выберите из списка:</label><br>
+                    <select id="selectInet" onchange="refreshTextArea('selectInet')">
+                        <script>loadOption("selectInet")</script>
+                    </select>
+                    <input type="submit" value="Показать" id="btnShowInet" style="display: block" onclick="showTextArea('selectInet')"/>
+                    <input type="submit" value="Скрыть" id="btnHideInet" style="display: none" onclick="hideTextArea('selectInet')"/>
+                    <label for="textAreaInet"></label>
+                    <textarea style="display: none" id="textAreaInet" disabled></textarea>
+                    <input type="submit" value="Добавить" id="btnAddInet" style="display: block"
+                           onclick="changeDisplayElement(['','divAddInet', 'btnAddInet'])"/>
+                </div>
+                <div id="divAddInet" style="display: none">
+                    <div>
+                        <h4>Добавление записки!</h4>
+                    </div>
+                    <form method="get" >
+                        <label>Введите заголовок записки:
+                            <input id="inputAddNameInet" type="text" name="name"><br />
+                        </label>
+                        <label>Введите текст записки:</label><br />
+                        <textarea id="taAddValueInet"></textarea><br />
+                        <input type="submit" value="Отправить"/>
+                    </form>
+                    <input type="submit" value="Отмена" onclick="changeDisplayElement(['','divAddInet', 'btnAddInet'])"/>
+                </div>
+            </div>
         </div>
-    </div>
-    <div >
-        <span class="tt" onclick="viewSpoiler('other'); return false">
-            <h3>Прочее</h3>
-        </span>
-        <div id="other" style="display: none">
-            <label for="selectOther">Выберите из списка:</label><br>
-            <select id="selectOther" onchange="refreshTextArea('selectOther')">
-                <script>loadOption("selectOther")</script>
-            </select>
-            <input type="submit" value="Показать" id="btnShowOther" style="display: block" onclick="showTextArea('selectOther')"/>
-            <input type="submit" value="Скрыть" id="btnHideOther" style="display: none" onclick="hideTextArea('selectOther')"/>
-            <label for="textAreaOther"></label><textarea style="display: none" id="textAreaOther" disabled></textarea>
-            <input type="submit" value="Добавить"/>
+        <div id="mainOther">
+            <span class="tt" onclick="viewSpoiler('other'); return false">
+                <h3>Прочее</h3>
+            </span>
+            <div id="other" style="display: none">
+                <div id="divSelectOther">
+                    <label for="selectOther">Выберите из списка:</label><br>
+                    <select id="selectOther" onchange="refreshTextArea('selectOther')">
+                        <script>loadOption("selectOther")</script>
+                    </select>
+                    <input type="submit" value="Показать" id="btnShowOther" style="display: block" onclick="showTextArea('selectOther')"/>
+                    <input type="submit" value="Скрыть" id="btnHideOther" style="display: none" onclick="hideTextArea('selectOther')"/>
+                    <label for="textAreaOther"></label>
+                    <textarea style="display: none" id="textAreaOther" disabled></textarea>
+                    <input type="submit" value="Добавить" id="btnAddOther" style="display: block"
+                           onclick="changeDisplayElement(['','divAddOther', 'btnAddOther'])"/>
+                </div>
+                <div id="divAddOther" style="display: none">
+                    <div>
+                        <h4>Добавление записки!</h4>
+                    </div>
+                    <form method="get" >
+                        <label>Введите заголовок записки:
+                            <input id="inputAddNameOther" type="text" name="name"><br />
+                        </label>
+                        <label>Введите текст записки:</label><br />
+                        <textarea id="taAddValueOther"></textarea><br />
+                        <input type="submit" value="Отправить"/>
+                    </form>
+                    <input type="submit" value="Отмена" onclick="changeDisplayElement(['','divAddOther', 'btnAddOther'])"/>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
