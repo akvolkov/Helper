@@ -38,12 +38,13 @@
                     <div>
                         <h4>Добавление записки!</h4>
                     </div>
-                    <form method="get" >
+                    <form method="post" >
                         <label>Введите заголовок записки:
                             <input id="inputAddNameBuild" type="text" name="name"><br />
                         </label>
                         <label>Введите текст записки:</label><br />
-                        <textarea id="taAddValueBuild"></textarea><br />
+                        <textarea id="taAddValueBuild" name="text"></textarea><br />
+                        <textarea name="path" style="display: none">build</textarea>
                         <input type="submit" value="Отправить"/>
                     </form>
                     <input type="submit" value="Отмена" onclick="changeDisplayElement(['','divAddBuild', 'btnAddBuild'])"/>
@@ -72,12 +73,13 @@
                     <div>
                         <h4>Добавление записки!</h4>
                     </div>
-                    <form method="get" >
+                    <form method="post" >
                         <label>Введите заголовок записки:
                             <input id="inputAddNameBifit" type="text" name="name"><br />
                         </label>
                         <label>Введите текст записки:</label><br />
-                        <textarea id="taAddValueBifit"></textarea><br />
+                        <textarea id="taAddValueBifit" name="text"></textarea><br />
+                        <textarea name="path" style="display: none">bifit</textarea>
                         <input type="submit" value="Отправить"/>
                     </form>
                     <input type="submit" value="Отмена" onclick="changeDisplayElement(['','divAddBifit', 'btnAddBifit'])"/>
@@ -106,12 +108,13 @@
                     <div>
                         <h4>Добавление записки!</h4>
                     </div>
-                    <form method="get" >
+                    <form method="post" >
                         <label>Введите заголовок записки:
                             <input id="inputAddNameInet" type="text" name="name"><br />
                         </label>
                         <label>Введите текст записки:</label><br />
-                        <textarea id="taAddValueInet"></textarea><br />
+                        <textarea id="taAddValueInet" name="text"></textarea><br />
+                        <textarea name="path" style="display: none">inet</textarea>
                         <input type="submit" value="Отправить"/>
                     </form>
                     <input type="submit" value="Отмена" onclick="changeDisplayElement(['','divAddInet', 'btnAddInet'])"/>
@@ -139,12 +142,13 @@
                     <div>
                         <h4>Добавление записки!</h4>
                     </div>
-                    <form method="get" >
+                    <form method="post" >
                         <label>Введите заголовок записки:
                             <input id="inputAddNameOther" type="text" name="name"><br />
                         </label>
                         <label>Введите текст записки:</label><br />
-                        <textarea id="taAddValueOther"></textarea><br />
+                        <textarea id="taAddValueOther" name="text"></textarea><br />
+                        <textarea name="path" style="display: none">other</textarea>
                         <input type="submit" value="Отправить"/>
                     </form>
                     <input type="submit" value="Отмена" onclick="changeDisplayElement(['','divAddOther', 'btnAddOther'])"/>

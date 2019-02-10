@@ -1,6 +1,0 @@
-{
-    "metanit": "https://metanit.com",
-    "javarush": "https://javarush.ru/",
-    "yandex": "https://yandex.ru",
-    "google": "https://www.google.ru"
-}

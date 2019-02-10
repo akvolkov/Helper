@@ -1,9 +1,9 @@
 const CONDITIONS =
     {
-        "selectBuild": ["helper/data/valueBuild.txt", "textAreaBuild", "btnHideBuild", "btnShowBuild"],
-        "selectBifit": ["helper/data/valueBifit.txt", "textAreaBifit", "btnHideBifit", "btnShowBifit"],
-        "selectInet": ["helper/data/valueInet.txt", "textAreaInet", "btnHideInet", "btnShowInet"],
-        "selectOther": ["helper/data/valueOther.txt", "textAreaOther", "btnHideOther", "btnShowOther"]
+        "selectBuild": ["helper/data/build.json", "textAreaBuild", "btnHideBuild", "btnShowBuild"],
+        "selectBifit": ["helper/data/bifit.json", "textAreaBifit", "btnHideBifit", "btnShowBifit"],
+        "selectInet": ["helper/data/inet.json", "textAreaInet", "btnHideInet", "btnShowInet"],
+        "selectOther": ["helper/data/other.json", "textAreaOther", "btnHideOther", "btnShowOther"]
     };
 
 /**
@@ -20,7 +20,7 @@ function viewSpoiler(n) {
  */
 function hello() {
     const request = new XMLHttpRequest();
-    request.open("GET", "helper/data/hello.txt", false);
+    request.open("GET", "helper/data/hello.json", false);
     request.send();
     const status = request.status;
     if(status === 200)
@@ -119,9 +119,10 @@ function refreshTextArea(id) {
     }
 }
 
-//Реализовать кнопку Добавить.
-//Реализовать Post метод сервлета, вызываемый по нажатию кнопки Добавить
+//сделать обновление options после добавления
 //Реализовать кнопку Удалить.
-//ревью html файла
+//Реализовать кнопку редактировать.
 //В ссылках Инете в поле TextArea сделать ссылки кликабельными.
+//Русский текст плохо отображается в TextArea
+//Ревью html
 //Навесить стили.
